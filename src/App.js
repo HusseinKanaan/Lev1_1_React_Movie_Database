@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+
+import Filmkarten from './components/Filmkarten';
+import movies from './Data';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {movies.map((elt, i) =>
+        < Filmkarten
+          key={i}
+          titel={elt.title}
+          jahr={elt.year}
+          direktor={elt.director}
+          dauer={elt.duration}
+          Genre={elt.genre}
+          Rate={elt.rate}
+        />
+      )}
     </div>
   );
 }
 
 export default App;
+
